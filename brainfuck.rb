@@ -16,7 +16,7 @@ def readFile(filename)
 		return data
 
 	else
-		return "File \'#{filename}\' not found"
+		return 0
 	end
 end
 
@@ -94,7 +94,11 @@ if __FILE__ == $PROGRAM_NAME
 	if ARGV.length != 1
 		puts "Usage: #{$PROGRAM_NAME} filename"
 	else
-		code = readFile(ARGV[0])		
-		parseCode(code)		
+		code = readFile(ARGV[0])
+		if code != 0		
+			parseCode(code)
+		else
+			puts "Unable to read file"
+		end
 	end
 end
