@@ -3,7 +3,6 @@
 # >>+-,.[ Brainfuck Interpreter ].,-+<< #
 #########################################
 
-
 def readFile(filename)
 	if(File.exist?(filename))
 		fileToParse = File.new(filename, "r")
@@ -14,13 +13,10 @@ def readFile(filename)
 
 		fileToParse.close
 		return data
-
 	else
 		return 0
 	end
 end
-
-
 
 def parseCode(code)
 
